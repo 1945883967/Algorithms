@@ -1,4 +1,4 @@
-package com.minghai.example;
+package example;
 
 public class E03BinarySearch {
 	public static int rank(int key, int[] a) {
@@ -12,5 +12,4 @@ public class E03BinarySearch {
 		}
 		return -1;
 	}
-
 }

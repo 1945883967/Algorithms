@@ -1,4 +1,4 @@
-package com.minghai.example;
+package example;
 //二分查找递归版本
 public class E04BinarySearchRecursion {
 	

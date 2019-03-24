@@ -1,4 +1,4 @@
-package com.minghai.example;
+package example;
 
 public class E02StaticMethod {
 	//计算一个整数的绝对值

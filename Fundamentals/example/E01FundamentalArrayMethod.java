@@ -1,4 +1,4 @@
-package com.minghai.example;
+package example;
 
 public class E01FundamentalArrayMethod {
 	// 找出数组中最大的元素

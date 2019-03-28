@@ -232,7 +232,7 @@ public class Algorithms1_3Queue<Item> implements Iterable<Item> {
 
 **算法1.4 背包**
 
-``` 
+```  
 import java.util.Iterator;
 
 public class Algorithms1_4Bag<Item> implements Iterable<Item> {
@@ -261,7 +261,7 @@ public class Algorithms1_4Bag<Item> implements Iterable<Item> {
 			return current != null;
 		}
 		public void move() {}
-		public Item next() {
+		public Item next() {s
 			Item item = current.item;
 			current = current.next;
 			return item;

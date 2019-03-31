@@ -87,4 +87,67 @@ public class UF_quick_find {
 	}
 }
 ```
+![Snipaste_2019-03-31_14-06-31.jpg](https://i.loli.net/2019/03/31/5ca059037ff8a.jpg)
+**森林表示**
+quick-union算法用**节点**（带标签的圆圈）表示触点，用一个结点到另一个节点的箭头表示**链接**，从技术上说，得到的结构是**树**，id[]数组用父链接的形式形成了一片森林。
+
+代码中数组被初始化后，每个结点的链接都指向它自己。
+
+**quick-union算法的分析**
+quick-union算法看起来比quick-find算法更快，应为它不需要为每对输入遍历整个数组，但quick-union算法任然存在问题，不能保证它在所有的情况下都能比quick-find算法快的多（对于某些输入，quick-union算法并不比quick-find算法快）。
+
+**定义**：**一棵树的大小是它的结点数量。树中的一个节点的深度是它到根节点的路径上的链接树。树的高度是它所有节点中的最大深度。**
+
+##### 加权quick-union算法
+记录每一棵树的大小并总是将较小的树连接到较大的树。通过添加一个数组和改动代码来记录树中的节点数，从而改进算法效率，这样形成的树称之为**加权树**。
+
+```java
+public class WeightedQuickUnion {
+	private int[] id;//父链接数组（由触点索引）
+	private int[] sz;//（由触点索引的）各个根节点所对应的分量的大小
+	private int count;//连通分量数量
+	public WeightedQuickUnion(int N) {
+		count = N;
+		id = new int[N];
+		for (int i = 0; i < N; i++) {
+			id[i] = i;
+		}
+		sz = new int[N];
+		for (int i = 0; i < N; i++) {
+			sz[i] = 1;
+		}
+	}
+	public int count() {
+		return count;
+	}
+	public boolean connection(int p,int q) {
+		return find(p) == find(q);
+	}
+	public int find(int p) {
+		//跟随节点到根节点
+		while(p != id[p]) p = id[p];
+		return p;
+	}
+	public void union(int p,int q) {
+		int i = find(p);
+		int j = find(q);
+		if(i == j) return;
+		//将小树链接到大树的根节点
+		if(sz[i] < sz[j]) {id[i] = j;sz[j]+=sz[i];}
+		else 			  {id[j] = i;sz[i]+=sz[j];}
+		count--;
+	}
+}
+```
+
+加权quick-union算法是三种算法中唯一可以用于解决大型实际问题的算法。加权quick-union算法能够在合理的时间范围内解决实际中的大规模**动态连通性**问题。
+
+![Snipaste_2019-03-31_16-18-35.jpg](https://i.loli.net/2019/03/31/5ca078019379b.jpg)
+**最优算法**
+理想情况下，每个节点直接链接到它的根节点上，通过检查节点时将它们直接链接到根节点。（**路径压缩**）
+要实现路径压缩，只需在find()添加一个循环，将在路径上遇到的所有节点都直接链接到根节点。之后我们等到的树将是完全扁平化的树。
+
+**路径压缩的加权quick-union算法是最优算法，但并非所有操作都能在常数时间内完成**。
+
+* * *
 

@@ -6,21 +6,21 @@
 
 ## :bookmark_tabs:第一章 基础
 
-### 1.1基础编程模型
+### [1.1基础编程模型](https://github.com/1945883967/Algorithms/blob/master/Fundamentals/note/Fundamentals-1.1.md)
 
-### 1.2数据抽象
+### [1.2数据抽象](https://github.com/1945883967/Algorithms/blob/master/Fundamentals/note/Fundamentals-1.2.md)
 
-### 1.3 背包、队列和栈
+### [1.3 背包、队列和栈](https://github.com/1945883967/Algorithms/blob/master/Fundamentals/note/Fundamentals-1.3.md)
 
-### 1.4 算法分析
+### [1.4 算法分析](https://github.com/1945883967/Algorithms/blob/master/Fundamentals/note/Fundamentals-1.4.md)
 
-### 1.5 案例研究
+### [1.5 案例研究](https://github.com/1945883967/Algorithms/blob/master/Fundamentals/note/Fundamentals-1.5.md)
 
 ## :bookmark_tabs:第二章 排序
 
-### 2.1初级排序算法
+### [2.1初级排序算法](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.1.md)
 
-### 2.2 归并排序
+### [2.2 归并排序](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.2.md)
 
 ### 2.3快速排序
 

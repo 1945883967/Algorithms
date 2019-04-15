@@ -102,8 +102,6 @@ compareTo()必须满足一个全序关系，(这里用v>w表示compareTo())即�
 
 该算法将第 i小的元素放到 a[i]之中。数组的第 i个位置的左边是 i个最小的元素且它们不会再被访问。
 
-**[排序的动态过程](https://visualgo.net/zh/sorting)**
-
 ## 插入排序
 
 每次都将当前元素插入到左侧已经排序的数组中，使得插入之后左侧数组依然有序。
@@ -124,10 +122,37 @@ public static void sort(Comparable[] a){
 		int N = a.length;
 		for (int i = 0; i < N; i++) {
 			//将a[i]插入到a[i-1]、a[i-2]、a[i-3]...之中
-			for (int j = i; j < 0 && less(a[j], a[j-1]); j--) {
+			for (int j = i; j > 0 && less(a[j], a[j-1]); j--) {
 				exch(a, j, j-1);
 			}
 		}
 	}
+```
+
+## 希尔排序
+
+对于大规模的数组，插入排序很慢，因为它只能交换相邻的元素，每次只能将逆序数量减少 1。
+
+希尔排序的出现就是为了解决插入排序的这种局限性，它通过交换不相邻的元素，每次可以将逆序数量减少大于 1。
+
+希尔排序使用插入排序对间隔 h 的序列进行排序。通过不断减小 h，最后令 h=1，就可以使得整个数组是有序的。
+
+```java
+public static void sort(Comparable[] a) {
+		//将a[]按升序排列
+		int N = a.length;
+		int h = 1;
+		while(h < N/3) h = 3*h + 1;//1, 4, 13, 40, 121, 364, 1093, ...
+		while(h >= 1) {
+			//将数组变为h有序
+			for (int i = h; i < N; i++) {
+				//将a[i]插入到a[i-h],a[i-2*h],a[i-3*h]...之中
+				for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+					exch(a, j, j-h);
+				}
+			}
+			h = h/3;
+		}
+}
 ```
 

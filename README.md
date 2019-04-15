@@ -20,6 +20,10 @@
 
 ### [2.1初级排序算法](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.1.md)
 
+* [选择排序](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.1.md#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B1%BB%E6%A8%A1%E7%89%88#选择排序)
+* [插入排序](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.1.md#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B1%BB%E6%A8%A1%E7%89%88#插入排序)
+* [希尔排序](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.1.md#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B1%BB%E6%A8%A1%E7%89%88#希尔排序)
+
 ### [2.2 归并排序](https://github.com/1945883967/Algorithms/blob/master/Sorting/note/Sortings-2.2.md)
 
 ### 2.3快速排序

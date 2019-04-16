@@ -49,6 +49,4 @@ public class Algorithms4_MaxPQ<Key extends Comparable<Key>> {
 			k = j;
 		}
 	}
-	
-	
 }

@@ -35,4 +35,20 @@ public class BST<Key extends Comparable<Key>,Value> {
 		else if(cmp > 0) return get(x.right, key);
 		else             return x.val;
 	}
+	
+	public void put(Key key, Value val) {
+		//查找key,找到则更新它的值，否则为它创建一个新的结点
+		root = put(root, key, val);
+	}
+	private Node put(Node x, Key key, Value val) {
+		//如果key存在于以x为根结点的子树中则更新它的值
+		//否则将以key和val为键值对的新结点插入到该子树中
+		if(x == null) return new Node(key, val, 1);
+		int cmp = key.compareTo(x.key);
+		if     (cmp < 0) x.left = put(x.left, key, val);
+		else if(cmp > 0) x.right = put(x.right, key, val);
+		else x.val = val;
+		x.N = size(x.left) + size(x.right) + 1;
+		return x;
+	}
 }

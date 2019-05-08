@@ -232,7 +232,7 @@ public class Algorithms1_3Queue<Item> implements Iterable<Item> {
 
 **算法1.4 背包**
 
-```  
+```java  
 import java.util.Iterator;
 
 public class Algorithms1_4Bag<Item> implements Iterable<Item> {
@@ -285,3 +285,4 @@ Java不允许泛型数组
 [**类型擦除**](https://blog.csdn.net/briblue/article/details/76736356)
 
 **宽接口 窄接口**
+
